@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Node Runner - Upload Project</title>
+  <style>body{font-family:Arial;margin:40px}label{display:block;margin-top:8px}input[type=text],textarea{width:100%;padding:8px}</style>
+</head>
+<body>
+  <h1>Upload Node.js project (.zip)</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <label>Web name (will be used as folder name)
+      <input type="text" name="webName" required placeholder="my-site">
+    </label>
+    <label>Build command (optional)
+      <input type="text" name="buildCmd" placeholder="npm run build">
+    </label>
+    <label>Start command (optional)
+      <input type="text" name="startCmd" placeholder="npm start">
+    </label>
+    <label>
+      <input type="checkbox" name="deploy" value="1"> by clicking the box you agree to do not sell this web this is currently free.
+    </label>
+    <label>Project zip (one .zip containing the project folder)
+      <input type="file" name="projectZip" accept=".zip" required>
+    </label>
+    <button type="submit">Upload</button>
+  </form>
+  <hr>
+  <a href="/sites">View uploaded sites</a>
+  <p style="color:#a00">Warning: This service is only for node language. please dont run malware things. thank you!.</p>
+</body>
+</html>

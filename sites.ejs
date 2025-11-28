@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>Uploaded Sites</title>
+<style>body{font-family:Arial;margin:40px}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:8px}</style>
+</head>
+<body>
+  <h1>Uploaded Sites</h1>
+  <table>
+    <tr><th>Folder</th><th>Web name</th><th>Uploaded</th><th>Deployed requested</th><th>Actions</th></tr>
+    <% for(const item of list) { %>
+      <tr>
+        <td><%= item.folder %></td>
+        <td><%= item.meta.webName %></td>
+        <td><%= item.meta.uploadedAt %></td>
+        <td><%= item.meta.deployedRequested %></td>
+        <td>
+          <a href="/site/<%= item.folder %>/metadata.json">metadata.json</a>
+        </td>
+      </tr>
+    <% } %>
+  </table>
+  <p><a href="/">Upload another</a></p>
+</body>
+</html>
